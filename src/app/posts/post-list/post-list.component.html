@@ -1,0 +1,28 @@
+<div class="clear">
+  <h1 class="left">All posts</h1>
+  <div class="right">
+    <button class="btn btn-primary add-button" (click)="addPost()"> Add new Post</button>
+  </div>
+</div>
+
+<table border="1" cellpadding="1" cellspacing="1" class="table table-striped" width="100%">
+  <thead>
+  <tr>
+    <th width="5%">ID</th>
+    <th width="25%">Title</th>
+    <th width="60%">Body</th>
+    <th width="10%">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let post of posts">
+    <td>{{post.id}}</td>
+    <td>{{post.title}}</td>
+    <td>{{post.body}}</td>
+    <td>
+      <button class="btn btn-danger" (click)="deletePost(post)"> Delete</button>
+      <button class="btn btn-danger" (click)="editPost(post)" style="margin-left: 20px;"> Edit</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
